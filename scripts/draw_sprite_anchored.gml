@@ -25,5 +25,5 @@ function draw_sprite_anchored_ext(spr,sub,_x,_y,xs,ys,rot,col,alpha,xoff,yoff) {
 	true_x += lengthdir_x(y_scale*yoff,rot+90);
 	true_y += lengthdir_y(y_scale*yoff,rot+90);
 	
-  draw_sprite_ext(spr,sub,true_x,true_y,xs,ys,rot,col,alpha);
+	draw_sprite_ext(spr,sub,true_x,true_y,xs,ys,rot,col,alpha);
 }
