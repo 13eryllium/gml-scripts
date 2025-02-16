@@ -13,6 +13,9 @@ Draws a sprite at an anchored offset.
 # Libraries
 ## [Icoso](https://github.com/13eryllium/gml-scripts/blob/e8a9b1674c06b117e2beea961a45325c323eeaf4/scripts/icoso.gml)
 ###### A GML string parser
+not finished, bugs are present. known bugs include:
+negatives not working
+decimals not working
 ### icoso_parse(expression)
 #### Evaluates a mathematical or functional expression string, supporting numbers, strings, operators, and function calls.
 
