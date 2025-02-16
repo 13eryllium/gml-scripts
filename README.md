@@ -2,13 +2,12 @@
 A repository of GML scripts I've made.
 
 # Drawing
-### [draw_sprite_anchored_ext()](https://github.com/13eryllium/gml-scripts/blob/9e4363f2e4a52d2fb067001b23697e5dc70fb282/scripts/draw_sprite_anchored.gml)
-#### draw_sprite_anchored_ext(sprite,subimg,x,y,xscale,yscale,rot,col,alpha,xoff,yoff)
-#####
+## [draw_sprite_anchored_ext()](https://github.com/13eryllium/gml-scripts/blob/9e4363f2e4a52d2fb067001b23697e5dc70fb282/scripts/draw_sprite_anchored.gml)
+### draw_sprite_anchored_ext(sprite,subimg,x,y,xscale,yscale,rot,col,alpha,xoff,yoff)
+#### Draws a sprite at an anchored offset.
 ```gml
 draw_sprite_anchored_ext(spr_cat,0,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha,0.5,0);
 ```
-Draws a sprite at an anchored offset.
 
 # Libraries
 ## [Icoso](https://github.com/13eryllium/gml-scripts/blob/e8a9b1674c06b117e2beea961a45325c323eeaf4/scripts/icoso.gml)
