@@ -16,6 +16,7 @@ draw_sprite_anchored_ext(spr_cat,0,x,y,image_xscale,image_yscale,image_angle,ima
 ##### not finished, bugs are present. known bugs include:
 ###### negatives not working
 ###### decimals not working
+###### when working with strings, spaces are removed
 ### icoso_parse(expression)
 #### Evaluates a mathematical or functional expression string, supporting numbers, strings, operators, and function calls.
 
