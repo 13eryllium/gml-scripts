@@ -24,12 +24,62 @@ function icoso_get_variable_value(var_path) {
     return 0;
 }
 
+function is_valid_number(str) {
+    if (string_length(str) == 0) return false;
+    
+    var has_decimal = false;
+    var has_digits = false;
+    var i = 1;
+    var start = 1;
+    
+    if (string_char_at(str, 1) == "-") {
+        start = 2;
+        if (string_length(str) == 1) return false;
+    }
+    
+    for (i = start; i <= string_length(str); i++) {
+        var char = string_char_at(str, i);
+        if (char == ".") {
+            if (has_decimal) return false;
+            has_decimal = true;
+        }
+        else if (string_digits(char) == char) {
+            has_digits = true;
+        }
+        else {
+            return false;
+        }
+    }
+    
+    return has_digits;
+}
+
 function icoso_parse(str) {
-    str = string_replace_all(str, " ", "");
-    var tokens = [];
-    var current_token = "";
+    var processed_str = "";
     var in_string = false;
     var i = 0;
+    
+    while (i < string_length(str)) {
+        var char = string_char_at(str, i + 1);
+        
+        if (char == "'") {
+            in_string = !in_string;
+            processed_str += char;
+        }
+        else if (in_string) {
+            processed_str += char;
+        }
+        else if (char != " ") {
+            processed_str += char;
+        }
+        i++;
+    }
+    
+    str = processed_str;
+    var tokens = [];
+    var current_token = "";
+    in_string = false;
+    i = 0;
     
     while (i < string_length(str)) {
         var char = string_char_at(str, i + 1);
@@ -52,12 +102,30 @@ function icoso_parse(str) {
         else if (in_string) {
             current_token += char;
         }
-        else if (char == "+" || char == "-" || char == "*" || char == "/" || char == "(" || char == ")" || char == "^" || char == ",") {
+        else if (char == "+" || char == "*" || char == "/" || char == "(" || char == ")" || char == "^" || char == ",") {
             if (string_length(current_token) > 0) {
                 array_push(tokens, current_token);
                 current_token = "";
             }
             array_push(tokens, char);
+        }
+        else if (char == "-") {
+            if (string_length(current_token) > 0) {
+                array_push(tokens, current_token);
+                current_token = "";
+            }
+            if (i == 0 || array_length(tokens) == 0 || 
+                tokens[array_length(tokens) - 1] == "(" || 
+                tokens[array_length(tokens) - 1] == "," || 
+                tokens[array_length(tokens) - 1] == "+" ||
+                tokens[array_length(tokens) - 1] == "-" ||
+                tokens[array_length(tokens) - 1] == "*" ||
+                tokens[array_length(tokens) - 1] == "/" ||
+                tokens[array_length(tokens) - 1] == "^") {
+                current_token = "-";
+            } else {
+                array_push(tokens, "-");
+            }
         }
         else {
             current_token += char;
@@ -90,9 +158,7 @@ function icoso_evaluate(tokens) {
         if (string_char_at(token, 1) == "'") {
             ds_queue_enqueue(output_queue, token);
         }
-        else if (string_digits(token) == token || 
-            (string_length(token) > 1 && string_char_at(token, 1) == "-" && 
-             string_digits(string_delete(token, 1, 1)) == string_delete(token, 1, 1))) {
+        else if (is_valid_number(token)) {
             ds_queue_enqueue(output_queue, real(token));
         }
         else if (ds_map_exists(global.icoso_functions, token)) {
