@@ -11,6 +11,7 @@ draw_sprite_anchored_ext(spr_cat,0,x,y,image_xscale,image_yscale,image_angle,ima
 
 # Libraries
 ## [Icoso](https://github.com/13eryllium/gml-scripts/blob/e8a9b1674c06b117e2beea961a45325c323eeaf4/scripts/icoso.gml)
+![icoso](https://github.com/user-attachments/assets/1b9ec462-c57a-4ac2-9f17-b6abc9de4d07)
 ###### A GML string parser
 ##### not finished, bugs are present. known bugs include:
 ###### negatives not working
