@@ -9,6 +9,8 @@ A repository of GML scripts I've made.
 draw_sprite_anchored_ext(spr_cat,0,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha,0.5,0);
 ```
 
+Assuming that `spr_cat` has its origin set to middle center, this draws the sprite as if it were anchored on middle right.
+
 # Libraries
 ## [Icoso](https://github.com/13eryllium/gml-scripts/blob/e8a9b1674c06b117e2beea961a45325c323eeaf4/scripts/icoso.gml)
 ![icoso](https://github.com/user-attachments/assets/1b9ec462-c57a-4ac2-9f17-b6abc9de4d07)
