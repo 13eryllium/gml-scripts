@@ -1,16 +1,16 @@
-// @function draw_sprite_anchored_ext(sprite,subimg,x,y,xscale,yscale,rot,col,alpha,xoff,yoff)
-// @description Draws a sprite at an anchored offset.
-// @param sprite - The sprite to draw.
-// @param subimg - The subimage (frame) to draw.
-// @param x - The x position to draw the sprite at.
-// @param y - The y position to draw the sprite at.
-// @param xscale - The width to draw the sprite.
-// @param yscale - The height to draw the sprite.
-// @param rot - The angle to draw the sprite.
-// @param col - The multiplied color to apply to the sprite.
-// @param alpha - The opacity to draw the image at.
-// @param xoff - The x origin offset to draw at. If the image is centered, it ranges from -0.5 to 0.5.
-// @param yoff - The y origin offset to draw at. If the image is centered, it ranges from -0.5 to 0.5.
+/// @function draw_sprite_anchored_ext(sprite,subimg,x,y,xscale,yscale,rot,col,alpha,xoff,yoff)
+/// @description Draws a sprite at an anchored offset.
+/// @param {Asset.GMSprite} spr The sprite to draw.
+/// @param {Real} sub The subimage (frame) to draw.
+/// @param {Real} _x The x position to draw the sprite at.
+/// @param {Real} _y The y position to draw the sprite at.
+/// @param {Real} xs The width to draw the sprite.
+/// @param {Real} ys The height to draw the sprite.
+/// @param {Real} rot The angle to draw the sprite.
+/// @param {Constant.Color} col The multiplied color to apply to the sprite.
+/// @param {Real} alpha The opacity to draw the image at.
+/// @param {Real} xoff The x origin offset to draw at. If the image is centered, it ranges from -0.5 to 0.5.
+/// @param {Real} yoff The y origin offset to draw at. If the image is centered, it ranges from -0.5 to 0.5.
 
 function draw_sprite_anchored_ext(spr,sub,_x,_y,xs,ys,rot,col,alpha,xoff,yoff) {
 	var x_scale = sprite_get_width(spr)*xs;
