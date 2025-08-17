@@ -11,6 +11,16 @@ draw_sprite_anchored_ext(spr_cat,0,x,y,image_xscale,image_yscale,image_angle,ima
 
 Assuming that `spr_cat` has its origin set to middle center, this draws the sprite as if it were anchored on middle right.
 
+
+# JSON
+## [read_and_parse()](https://github.com/13eryllium/gml-scripts/blob/main/scripts/read_and_parse.gml)
+### read_and_parse(file name)
+#### Draws a sprite at an anchored offset.
+```gml
+var path = program_directory + "test.json";
+data = read_and_parse(path);
+```
+
 # Libraries
 ## [Icoso](https://github.com/13eryllium/gml-scripts/blob/e8a9b1674c06b117e2beea961a45325c323eeaf4/scripts/icoso.gml)
 ![icoso](https://github.com/user-attachments/assets/1b9ec462-c57a-4ac2-9f17-b6abc9de4d07)
