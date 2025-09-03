@@ -15,7 +15,7 @@ Assuming that `spr_cat` has its origin set to middle center, this draws the spri
 # JSON
 ## [read_and_parse()](https://github.com/13eryllium/gml-scripts/blob/main/scripts/read_and_parse.gml)
 ### read_and_parse(file name)
-#### Draws a sprite at an anchored offset.
+#### Reads a JSON file as a string and parses it into a struct/array.
 ```gml
 var path = program_directory + "test.json";
 data = read_and_parse(path);
